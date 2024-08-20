@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/back') %><br>
+
+    <img src="<%= data.imageUrl %>" alt="<%= data.breed %>" width="200" height="200" />
+
+    <form action="/dog/<%= data._id %>?_method=PUT" method="POST">
+        <fieldset>
+            <legend> Update this dog</legend>
+            
+            
+            <label>
+                Breed: <input type="text" name="breed" value="<%= data.breed %>"/>
+                
+            </label>
+            <br>
+            <label>
+                Description:  
+            </label>
+            <br>
+            <textarea type="text" name="description">
+                <%= data.description %>
+            </textarea>
+            <br>
+            <label>
+                Image Url: <input type="text" name="imageUrl" value="<%= data.imageUrl %>" />
+            </label>
+        </fieldset><br>
+        <input type="submit" value="Update details"/>
+    </form>
+    <br>
+    <form action="/dog/<%= data._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete this entry"/>
+    </form>
+
+</body>
+</html>

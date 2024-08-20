@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <%- include('./partials/back') %><br>
+
+    <form action="/dog" method="POST">
+        <fieldset>
+            <legend> Register a new dog</legend>
+            
+            
+            <label>
+                Breed: <input type="text" name="breed" />
+                
+            </label>
+            <br>
+            <label>
+                Description:  
+            </label>
+            <br>
+            <textarea type="text" name="description"></textarea>
+            <br>
+            <label>
+                Image Url: <input type="text" name="imageUrl" />
+            </label>
+        </fieldset><br>
+        <input type="submit" value="Register a new breed"/>
+    </form>
+</body>
+</html>
